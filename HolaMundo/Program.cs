@@ -54,6 +54,7 @@ namespace HolaMundo
             Console.WriteLine("La división es " + (n1 / n2));
             Console.WriteLine("El módulo es " + (n1 % n2));
         }
+
         static void eje02() {
             const double precioHamburguesa = 10.5;
             const double precioPatata = 1.7;
@@ -83,9 +84,60 @@ namespace HolaMundo
             Console.WriteLine("Seno: " + (Math.Sin(n)));
             Console.WriteLine("Coseno: " + (Math.Cos(n)));
         }
+
+        static void eje04() {
+            Console.Write("Introduzca el lado del cuadrado: ");
+            int l = Convert.ToInt32(Console.ReadLine());
+
+            int perimetro = 0;
+            for(int i=0; i<4; i++) {
+                perimetro += l;
+            }
+
+            Console.WriteLine("El perímertro es " + perimetro);
+            Console.ReadLine();
+        }
+
+        static void eje05() {
+            int suma = 0;
+            int producto = 1;
+
+            for(int i = 0; i<4; i++) {
+                Console.Write("Introduzca un número: ");
+                int n = Convert.ToInt32(Console.ReadLine());
+
+                if (i <= 1) {
+                    suma += n;
+                }
+                else
+                {
+                    producto *= n;
+                }
+            }
+
+            Console.WriteLine("La suma es: " + suma + "\nEl producto es: " + producto);
+            Console.ReadLine();
+        }
+
+        static void eje06() {
+            int suma = 0;
+
+            for(int i = 0; i < 4; i++) {
+                Console.Write("Intrduzca un número: ");
+                int n = Convert.ToInt32(Console.ReadLine());
+
+                suma += n;
+            }
+
+            double promedio = suma / 4;
+
+            Console.WriteLine("La suma es: " + suma + "\nEl promedio es: " + promedio);
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
-            eje03();
+            eje06();
         }
     }
 }
