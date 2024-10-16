@@ -8,7 +8,7 @@ namespace HolaMundo
 {
     internal class Program
     {
-        static void eje01()
+        static void t1Eje01()
         {
             Console.Write("Introduzca un número: ");
             int n1 = Convert.ToInt32(Console.ReadLine());
@@ -29,7 +29,7 @@ namespace HolaMundo
             Console.WriteLine("El módulo es " + (n1 % n2));
         }
 
-        static void eje02() {
+        static void t1Eje02() {
             const double precioHamburguesa = 10.5;
             const double precioPatata = 1.7;
             const double precioBebida = 2.6;
@@ -47,7 +47,7 @@ namespace HolaMundo
             Console.WriteLine("Cantidad a pagar: " + total + " $");
         }
 
-        static void eje03() {
+        static void t1Eje03() {
             Console.Write("Introduce un número: ");
             int n = Convert.ToInt32(Console.ReadLine());
 
@@ -59,7 +59,7 @@ namespace HolaMundo
             Console.WriteLine("Coseno: " + (Math.Cos(n)));
         }
 
-        static void eje04() {
+        static void t1Eje04() {
             Console.Write("Introduzca el lado del cuadrado: ");
             int l = Convert.ToInt32(Console.ReadLine());
 
@@ -72,7 +72,7 @@ namespace HolaMundo
             Console.ReadLine();
         }
 
-        static void eje05() {
+        static void t1Eje05() {
             int suma = 0;
             int producto = 1;
 
@@ -93,7 +93,7 @@ namespace HolaMundo
             Console.ReadLine();
         }
 
-        static void eje06() {
+        static void t1Eje06() {
             int suma = 0;
 
             for(int i = 0; i < 4; i++) {
@@ -109,7 +109,7 @@ namespace HolaMundo
             Console.ReadLine();
         }
 
-        static void eje07() {
+        static void t1Eje07() {
             Console.Write("¿Cuántos cuesta el producto?: ");
             int price = Convert.ToInt32(Console.ReadLine());
 
@@ -122,7 +122,7 @@ namespace HolaMundo
             Console.ReadLine();
         }
 
-        static void eje08() {
+        static void t1Eje08() {
             double parcial1, parcial2, examen, trabajoFinal, notaFinal;
 
             Console.Write("Introduce la calificación del primer examen: ");
@@ -144,7 +144,7 @@ namespace HolaMundo
             Console.ReadLine();
         }
 
-        static void eje09() {
+        static void t1Eje09() {
             double aporte1, aporte2, aporte3, totalAporte;
 
             Console.Write("Introduce la aportación del socio 1: ");
@@ -166,7 +166,7 @@ namespace HolaMundo
             Console.ReadLine();
         }
 
-        static bool eje10() {
+        static bool t1Eje10() {
             bool inicio = false;
             string letras = "";
 
@@ -186,9 +186,142 @@ namespace HolaMundo
             return inicio;
         }
 
+        static void t2Eje01() {
+            Console.Write("Introduzca un número: ");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Introduzca otro número: ");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+
+            if (n1 >= n2) {
+                Console.WriteLine($"{n1} es mayor que {n2}");
+            }
+            else
+            {
+                Console.WriteLine($"{n2} es mayor que {n1}");
+            }
+
+            Console.ReadLine();
+        }
+
+        static void t2Eje02(){
+            Console.WriteLine("Cuantos kw has consumido anteriormente?: ");
+            int kw = Convert.ToInt32(Console.ReadLine());
+
+            double total = 0;  
+
+            if (kw < 1000)
+            {
+                total = kw * 0.14;  
+            }
+            else if (kw >= 1000 && kw < 1800)
+            {  
+                total = kw * 0.12;
+            }
+            else
+            {
+                total = kw * 0.08;  
+            }
+
+            Console.WriteLine("El total es: " + total);
+            Console.ReadLine();
+        }
+
+        static void t2Eje03()
+        {
+            Console.Write("Introduca usted si esta:\nCasado: C\nSoltero: S\nViudo: V\nDivorciado: D\nOpción: ");
+            string opc = Console.ReadLine();
+
+            switch (opc)
+            {
+                case "C":
+                    {
+                        Console.WriteLine("Tu estado Civil es Casado");
+                    }
+                break;
+
+                case "S":
+                    {
+                        Console.WriteLine("Tu estado Civil es Soltero");
+                    }
+                break;
+
+                case "V":
+                    {
+                        Console.WriteLine("Tu estado Civil es Viudo");
+                    }
+                break;
+
+                case "D":
+                    {
+                        Console.WriteLine("Tu estado Civil es Divorciado");
+                    }
+                break;
+
+                default: 
+                {
+                    Console.WriteLine("Opción no válida");    
+                }
+                break;
+            }
+
+            Console.ReadLine();
+        }
+
+        static void t2Eje04()
+        {
+            Console.Write("Introduzca un número del 1 al 9: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            if (n <= 0 || n > 9) {
+                while (n <= 0 || n > 9)
+                {
+                    Console.Write("Número no válido\nIntroduzca un número del 1 al 9:  ");
+                    n = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.WriteLine($"{n} * {i} = {n * i}");
+            }
+
+            Console.ReadLine();
+        }
+
+        static void t2Eje05() {
+            Console.Write("Introduzca una palabra: ");
+            string word = Console.ReadLine();
+
+            Console.WriteLine(word.Length);
+            Console.WriteLine(word.ToUpper());
+            Console.WriteLine(word.ToLower());
+            Console.WriteLine(word.Remove(0, 1));
+            Console.WriteLine(word.Replace("a", "*"));
+
+            Console.ReadLine();
+        }
+
+        static void t2Eje06()
+        {
+            Console.Write("Calcular el factorial de: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int fact = 1;
+            for(int i = n; i>0; i--)
+            {
+                fact *= i;
+            }
+
+            Console.WriteLine($"El factorial de {n} es {fact}");
+            Console.ReadLine();
+        }
+
+        static void t2Eje07() { 
+        }
         static void Main(string[] args)
         {
-            eje01();
+            t2Eje06();
         }
     }
 }
