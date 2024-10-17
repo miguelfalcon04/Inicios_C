@@ -317,11 +317,101 @@ namespace HolaMundo
             Console.ReadLine();
         }
 
-        static void t2Eje07() { 
+        static void t2Eje07() {
+            for (int i = 90; i >= 65; i--)
+            {
+                Console.Write(Convert.ToString((char)i) + " ");
+            }
+
+            Console.ReadLine();
+        }
+
+        static void t2Eje08()
+        {
+            Random random = new Random();
+            int n = random.Next(10, 31);
+            Console.WriteLine(n);
+
+            Console.ReadLine();
+        }
+
+        static void t2Eje09()
+        {
+            Console.Write("Introduzca el tamaño del array: ");
+            int arrayLenght = Convert.ToInt32(Console.ReadLine());
+
+            int[] num = new int[arrayLenght];
+            string par = "";
+            string impar = "";
+
+            for(int i=0; i<arrayLenght; i++)
+            {
+                Console.Write("Introduzca un número: ");
+                int n = Convert.ToInt32(Console.ReadLine());
+                num[i] = n;
+
+                if (n % 2 == 0)
+                {
+                    par += n + " ";
+                }
+                else
+                {
+                    impar += n + " ";
+                }
+            }
+            Console.Write("Numeros pares: " + par);
+            Console.Write("\nNumeros impares: " + impar);
+
+            Console.ReadLine();
+        }
+
+        static void t2Eje10()
+        {
+            int[] array = { 2, 6, 4, 5, 9, 1, 7, 8, 0, 3 };
+            Array.Sort(array);
+            
+            for(int i=0; i<array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+
+            Console.ReadLine();
+        }
+
+        static void t2Eje11()
+        {
+            Stack<int> myStackInt = new Stack<int>();
+
+            myStackInt.Push(1);
+            myStackInt.Push(2);
+            myStackInt.Push(3);
+            myStackInt.Push(4);
+            myStackInt.Push(5);
+            myStackInt.Push(6);
+            myStackInt.Push(7);
+            myStackInt.Push(8);
+            myStackInt.Push(9);
+            myStackInt.Push(10);
+
+            foreach (Object obj in myStackInt) { 
+                Console.Write(obj+" ");
+            }
+            Console.WriteLine();
+
+            myStackInt.Pop();
+            myStackInt.Pop();
+
+            foreach (Object obj in myStackInt)
+            {
+                Console.Write(obj+" ");
+            }
+            Console.WriteLine();
+
+            Console.ReadLine();
         }
         static void Main(string[] args)
         {
-            t2Eje06();
+            t2Eje11();
         }
     }
 }
